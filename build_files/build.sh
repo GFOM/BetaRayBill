@@ -11,7 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install @cosmic-desktop-environment tio btop fastfetch hyfetch adb -y 
-
+dnf5 remove rhythmbox nheko ibus okular thunderbird -y
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
