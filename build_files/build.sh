@@ -24,5 +24,5 @@ sudo dnf install mullvad-vpn mullvad-browser -y
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable mullvad-daemon.service
-systemctl enable mullvad-early-boot-blocking.service
+#systemctl enable mullvad-daemon.service
+#systemctl enable mullvad-early-boot-blocking.service
