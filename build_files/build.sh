@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install  @cosmic-desktop-environment -y 
 
 # Use a COPR Example:
 #
@@ -18,7 +18,11 @@ dnf5 install -y tmux
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo -y
+sudo dnf install mullvad-vpn mullvad-broswer -y
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable mullvad-daemon.service
+systemctl enable mullvad-early-boot-blocking.service
