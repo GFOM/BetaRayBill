@@ -19,7 +19,7 @@ dnf5 install  @cosmic-desktop-environment -y
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo -y
-sudo dnf install mullvad-vpn mullvad-broswer -y
+sudo dnf install mullvad-vpn mullvad-browser -y
 
 #### Example for enabling a System Unit File
 
