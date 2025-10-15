@@ -10,14 +10,19 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install @cosmic-desktop-environment tio btop fastfetch hyfetch adb -y 
-dnf5 remove rhythmbox nheko ibus okular thunderbird -y
+
+
+dnf5 -y copr disable ryanabx/cosmic-epochdnf5 remove rhythmbox nheko ibus okular thunderbird -y
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr enable ryanabx/cosmic-epoch
+dnf5 -y install cosmic-desktop
+dnf5 -y copr disable ryanabx/cosmic-epoch
+
 dnf5 config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo -y
 dnf5 install mullvad-browser -y
 
