@@ -11,8 +11,8 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 
+ dnf5 -y install btop fastfetch tio cmatrix 
 
-dnf5 -y copr disable ryanabx/cosmic-epochdnf5 remove rhythmbox nheko ibus okular thunderbird -y
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
